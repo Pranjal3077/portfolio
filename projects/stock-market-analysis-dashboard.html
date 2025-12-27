@@ -4,15 +4,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Excel Sales Dashboard | Pranjal Sharma</title>
+  <title>Stock Market Analysis Dashboard | Pranjal Sharma</title>
 
   <!-- Fonts + Shared Styles -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../style.css" />
-  <link rel="stylesheet" href="../taskbar.css" />
+  <link rel="stylesheet" href="/portfolio/style.css" />
+  <link rel="stylesheet" href="/portfolio/taskbar.css" />
 
   <style>
     body {
@@ -91,7 +91,7 @@
     .gallery {
       display: flex;
       gap: 1.5rem;
-      width: calc(300px * 6);
+      width: calc(300px * 7);
       animation: scrollGallery 30s linear infinite;
     }
 
@@ -174,7 +174,7 @@
   <!-- Load Taskbar -->
   <div id="taskbar-container"></div>
   <script>
-    fetch('../taskbar.html')
+    fetch('/portfolio/taskbar.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('taskbar-container').innerHTML = data;
@@ -188,54 +188,50 @@
       <h3>Stock Price Visualization and Predictions using Excel</h3>
     </div>
 
-<section id="introduction">
-  <h2>Introduction</h2>
-  <p>This project presents an interactive Excel dashboard that tracks and analyzes stock market data, including Opening Price, Closing Price, High, Low, and Volume over time. Using statistical techniques like Regression, Markov Chains, and Moving Averages, the dashboard helps visualize trends, volatility, and potential market movements from raw stock data.</p>
-</section>
+    <section id="introduction">
+      <h2>Introduction</h2>
+      <p>This project presents an interactive Excel dashboard that tracks and analyzes stock market data, including Opening Price, Closing Price, High, Low, and Volume over time. Using statistical techniques like Regression, Markov Chains, and Moving Averages, the dashboard helps visualize trends, volatility, and potential market movements from raw stock data.</p>
+    </section>
 
+    <section id="objective">
+      <h2>Objective</h2>
+      <p>To analyze and track stock price movements, trends, and volatility using Excel's statistical and visualization tools, providing insights to better understand market behavior and support data-driven investment decisions.</p>
+    </section>
 
-<section id="objective">
-  <h2>Objective</h2>
-  <p>To analyze and track stock price movements, trends, and volatility using Excel’s statistical and visualization tools, providing insights to better understand market behavior and support data-driven investment decisions.</p>
-</section>
+    <section id="methodology">
+      <h2>Methodology</h2>
+      <p>- Collected and cleaned raw stock market data from Kaggle using Excel.<br>
+         - Calculated key metrics such as Opening, Closing, High, Low prices, Volume, and Daily % Change.<br>
+         - Applied statistical techniques like Regression Analysis, Markov Chains, and Moving Averages to study trends and predict future movements.<br>
+         - Created interactive charts, slicers, and dashboards for dynamic visualization of stock performance.<br>
+         - Used conditional formatting to highlight volatility and significant price changes.
+      </p>
+    </section>
 
+    <section id="results">
+      <h2>Results</h2>
+      <p>The final dashboard offered clear insights into stock price trends, daily volatility, and market patterns. Users could quickly identify upward or downward trends, assess risk, and make informed investment or trading decisions.</p>
+    </section>
 
-<section id="methodology">
-  <h2>Methodology</h2>
-  <p>- Collected and cleaned raw stock market data from Kaggle using Excel.<br>
-     - Calculated key metrics such as Opening, Closing, High, Low prices, Volume, and Daily % Change.<br>
-     - Applied statistical techniques like Regression Analysis, Markov Chains, and Moving Averages to study trends and predict future movements.<br>
-     - Created interactive charts, slicers, and dashboards for dynamic visualization of stock performance.<br>
-     - Used conditional formatting to highlight volatility and significant price changes.
-  </p>
-</section>
-
-<section id="results">
-  <h2>Results</h2>
-  <p>The final dashboard offered clear insights into stock price trends, daily volatility, and market patterns. Users could quickly identify upward or downward trends, assess risk, and make informed investment or trading decisions.</p>
-</section>
-
-
-<section id="summary">
-  <h2>Summary</h2>
-  <p>This project demonstrates how Excel can be used to analyze and visualize stock market data. The interactive dashboard turns raw price and volume data into actionable insights for understanding trends, volatility, and market behavior.</p>
-</section>
-
+    <section id="summary">
+      <h2>Summary</h2>
+      <p>This project demonstrates how Excel can be used to analyze and visualize stock market data. The interactive dashboard turns raw price and volume data into actionable insights for understanding trends, volatility, and market behavior.</p>
+    </section>
 
     <!-- === Gallery Section === -->
     <div class="gallery-container">
       <div class="gallery">
-        <img src="../stockmarketanalysisphotos/%ofChange.png" alt="Dashboard 1">
-        <img src="../stockmarketanalysisphotos/Datasheet.png" alt="Dashboard 2">
-        <img src="../stockmarketanalysisphotos/ExponentialMovingAverage.png" alt="Dashboard 3">
-        <img src="../stockmarketanalysisphotos/Markovanalysis.png" alt="Dashboard 4">
-        <img src="../stockmarketanalysisphotos/MarkovChainGraph.png" alt="Dashboard 5">
-        <img src="../stockmarketanalysisphotos/RegressionTable.png" alt="Dashboard 6">
-        <img src="../stockmarketanalysisphotos/SimpleMovingAverages.png" alt="Dashboard 7">
+        <img src="/portfolio/stockmarketanalysisphotos/%ofChange.png" alt="Percentage Change Analysis">
+        <img src="/portfolio/stockmarketanalysisphotos/Datasheet.png" alt="Data Sheet">
+        <img src="/portfolio/stockmarketanalysisphotos/ExponentialMovingAverage.png" alt="Exponential Moving Average">
+        <img src="/portfolio/stockmarketanalysisphotos/Markovanalysis.png" alt="Markov Analysis">
+        <img src="/portfolio/stockmarketanalysisphotos/MarkovChainGraph.png" alt="Markov Chain Graph">
+        <img src="/portfolio/stockmarketanalysisphotos/RegressionTable.png" alt="Regression Table">
+        <img src="/portfolio/stockmarketanalysisphotos/SimpleMovingAverages.png" alt="Simple Moving Averages">
       </div>
     </div>
 
-    <a href="../project.html?category=excel" class="back-btn">← Back to Projects</a>
+    <a href="/portfolio/project.html?category=excel" class="back-btn">← Back to Projects</a>
   </div>
 
   <!-- === Image Zoom Modal Script === -->
