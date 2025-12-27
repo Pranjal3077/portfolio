@@ -11,8 +11,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../style.css" />
-  <link rel="stylesheet" href="../taskbar.css" />
+  <link rel="stylesheet" href="/portfolio/style.css" />
+  <link rel="stylesheet" href="/portfolio/taskbar.css" />
 
   <style>
     body {
@@ -91,7 +91,7 @@
     .gallery {
       display: flex;
       gap: 1.5rem;
-      width: calc(300px * 6);
+      width: calc(300px * 5);
       animation: scrollGallery 30s linear infinite;
     }
 
@@ -167,8 +167,30 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    a{
-      color: #66fcf1
+    a {
+      color: #66fcf1;
+      text-decoration: none;
+      border-bottom: 1px dotted #45a29e;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      color: #45a29e;
+      border-bottom: 1px solid #66fcf1;
+    }
+
+    section a[target="_blank"] {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.3rem 0.8rem;
+      background: rgba(102, 252, 241, 0.1);
+      border-radius: 6px;
+      border: 1px solid rgba(102, 252, 241, 0.3);
+    }
+
+    section a[target="_blank"]:hover {
+      background: rgba(102, 252, 241, 0.2);
+      box-shadow: 0 0 10px rgba(102, 252, 241, 0.4);
     }
   </style>
 </head>
@@ -178,7 +200,7 @@
   <!-- Load Taskbar -->
   <div id="taskbar-container"></div>
   <script>
-    fetch('../taskbar.html')
+    fetch('/portfolio/taskbar.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('taskbar-container').innerHTML = data;
@@ -192,60 +214,54 @@
       <h3>Data Visualization and Prediction using Statistical Methods</h3>
     </div>
 
-<section id="introduction">
-  <h2>Introduction</h2>
-  <p>This project presents a Hybrid Predictive Demand Forecasting System that combines Regression analysis and ARIMA modeling to predict future product demand. The goal is to provide accurate forecasts by leveraging historical sales data, enabling data-driven inventory and sales planning decisions.</p>
-</section>
+    <section id="introduction">
+      <h2>Introduction</h2>
+      <p>This project presents a Hybrid Predictive Demand Forecasting System that combines Regression analysis and ARIMA modeling to predict future product demand. The goal is to provide accurate forecasts by leveraging historical sales data, enabling data-driven inventory and sales planning decisions.</p>
+    </section>
 
+    <section id="objective">
+      <h2>Objective</h2>
+      <p>To predict future product demand by combining Regression and ARIMA models, providing actionable insights for inventory management, sales planning, and strategic decision-making.</p>
+    </section>
 
-<section id="objective">
-  <h2>Objective</h2>
-  <p>To predict future product demand by combining Regression and ARIMA models, providing actionable insights for inventory management, sales planning, and strategic decision-making.</p>
-</section>
+    <section id="methodology">
+      <h2>Methodology</h2>
+      <p>- Collected and cleaned historical sales data using Excel Power Query.<br>
+         - Performed Regression analysis to identify key factors affecting demand.<br>
+         - Applied ARIMA modeling to forecast future demand trends.<br>
+         - Built an interactive Excel dashboard with pivot tables, charts, and slicers for dynamic visualization.<br>
+         - Used conditional formatting to highlight critical trends and anomalies.
+      </p>
+    </section>
 
+    <section id="results">
+      <h2>Results</h2>
+      <p>The hybrid forecasting model generated accurate demand predictions and highlighted seasonal trends. The interactive dashboard allowed decision-makers to monitor forecasted vs. actual demand, identify high-demand products, and optimize inventory planning effectively.</p>
+    </section>
 
-<section id="methodology">
-  <h2>Methodology</h2>
-  <p>- Collected and cleaned historical sales data using Excel Power Query.<br>
-     - Performed Regression analysis to identify key factors affecting demand.<br>
-     - Applied ARIMA modeling to forecast future demand trends.<br>
-     - Built an interactive Excel dashboard with pivot tables, charts, and slicers for dynamic visualization.<br>
-     - Used conditional formatting to highlight critical trends and anomalies.
-  </p>
-</section>
+    <section id="summary">
+      <h2>Summary</h2>
+      <p>This project demonstrates how a hybrid approach combining Regression and ARIMA models can enhance demand forecasting. The Excel dashboard transformed historical sales data into actionable insights, enabling data-driven inventory management and strategic planning.</p>
+    </section>
 
-
-<section id="results">
-  <h2>Results</h2>
-  <p>The hybrid forecasting model generated accurate demand predictions and highlighted seasonal trends. The interactive dashboard allowed decision-makers to monitor forecasted vs. actual demand, identify high-demand products, and optimize inventory planning effectively.</p>
-</section>
-
-
-<section id="summary">
-  <h2>Summary</h2>
-  <p>This project demonstrates how a hybrid approach combining Regression and ARIMA models can enhance demand forecasting. The Excel dashboard transformed historical sales data into actionable insights, enabling data-driven inventory management and strategic planning.</p>
-</section>
-
-
-<section id="data-sources">
-  <h2>Data Source</h2>
-  <p>In this project, I used raw sales data from Kaggle.</p>
-  <a href="https://www.kaggle.com/datasets/aswathrao/demand-forecasting" target="_blank">Click to Download</a>
-</section>
-
+    <section id="data-sources">
+      <h2>Data Source</h2>
+      <p>In this project, I used raw sales data from Kaggle.</p>
+      <a href="https://www.kaggle.com/datasets/aswathrao/demand-forecasting" target="_blank">Click to Download</a>
+    </section>
 
     <!-- === Gallery Section === -->
     <div class="gallery-container">
       <div class="gallery">
-        <img src="../hybridarimaphotos/Dashboard.jpg" alt="Dashboard 1">
-        <img src="../hybridarimaphotos/Data.jpg" alt="Dashboard 2">
-        <img src="../hybridarimaphotos/forecast demand.jpg" alt="Dashboard 3">
-        <img src="../hybridarimaphotos/Screenshot 2025-11-28 225646.jpg" alt="Dashboard 4">
-        <img src="../hybridarimaphotos/Screenshot 2025-11-28 230056.jpg" alt="Dashboard 5">
+        <img src="/portfolio/hybridarimaphotos/Dashboard.jpg" alt="ARIMA Dashboard">
+        <img src="/portfolio/hybridarimaphotos/Data.jpg" alt="Data Analysis">
+        <img src="/portfolio/hybridarimaphotos/forecast demand.jpg" alt="Forecast Demand">
+        <img src="/portfolio/hybridarimaphotos/Screenshot 2025-11-28 225646.jpg" alt="Analysis Screenshot 1">
+        <img src="/portfolio/hybridarimaphotos/Screenshot 2025-11-28 230056.jpg" alt="Analysis Screenshot 2">
       </div>
     </div>
 
-    <a href="../project.html?category=excel" class="back-btn">← Back to Projects</a>
+    <a href="/portfolio/project.html?category=excel" class="back-btn">← Back to Projects</a>
   </div>
 
   <!-- === Image Zoom Modal Script === -->
