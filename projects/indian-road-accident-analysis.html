@@ -11,8 +11,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../style.css" />
-  <link rel="stylesheet" href="../taskbar.css" />
+  <link rel="stylesheet" href="/portfolio/style.css" />
+  <link rel="stylesheet" href="/portfolio/taskbar.css" />
 
   <style>
     body {
@@ -91,7 +91,7 @@
     .gallery {
       display: flex;
       gap: 1.5rem;
-      width: calc(300px * 6);
+      width: calc(300px * 5);
       animation: scrollGallery 30s linear infinite;
     }
 
@@ -166,6 +166,24 @@
       from { opacity: 0; transform: translateY(15px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    #data-sources a {
+      color: #66fcf1;
+      text-decoration: none;
+      font-weight: bold;
+      border-bottom: 1px dotted #45a29e;
+      transition: all 0.3s ease;
+    }
+
+    #data-sources a:hover {
+      color: #45a29e;
+      text-decoration: underline;
+      border-bottom: 1px solid #66fcf1;
+    }
+
+    #data-sources br {
+      margin-bottom: 0.3rem;
+    }
   </style>
 </head>
 
@@ -174,7 +192,7 @@
   <!-- Load Taskbar -->
   <div id="taskbar-container"></div>
   <script>
-    fetch('../taskbar.html')
+    fetch('/portfolio/taskbar.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('taskbar-container').innerHTML = data;
@@ -199,112 +217,88 @@
     <section id="objective">
       <h2>Objective</h2>
       <p>Analyze year-wise trends in road accident deaths (2014–2022)
-
-         Identify high-fatality states using geographic analysis
-
-         Measure state-wise change in road accident deaths (2018 → 2019)
-
-         Compare railway vs road accident death ratios
-
-         Build policy-relevant KPIs using SQL </p>
+         <br>Identify high-fatality states using geographic analysis
+         <br>Measure state-wise change in road accident deaths (2018 → 2019)
+         <br>Compare railway vs road accident death ratios
+         <br>Build policy-relevant KPIs using SQL
+      </p>
     </section>
 
-<section id="methodology">
-  <h2>Methodology</h2>
-  <p>
-    - Collected real-world road accident datasets from the Government of India open data portal (data.gov.in).<br>
-    - Cleaned and standardized messy, multi-year datasets with inconsistent formats using SQL Server.<br>
-    - Created analytical KPIs and summary views using SQL queries, aggregations, and calculations.<br>
-    - Combined multiple datasets across different years to enable year-wise and state-wise comparisons.<br>
-    - Exported processed data to Excel for compatibility with Tableau Public.<br>
-    - Designed an interactive and ethical data visualization dashboard using Tableau Public, clearly stating data limitations.
-  </p>
-</section>
+    <section id="methodology">
+      <h2>Methodology</h2>
+      <p>
+        - Collected real-world road accident datasets from the Government of India open data portal (data.gov.in).<br>
+        - Cleaned and standardized messy, multi-year datasets with inconsistent formats using SQL Server.<br>
+        - Created analytical KPIs and summary views using SQL queries, aggregations, and calculations.<br>
+        - Combined multiple datasets across different years to enable year-wise and state-wise comparisons.<br>
+        - Exported processed data to Excel for compatibility with Tableau Public.<br>
+        - Designed an interactive and ethical data visualization dashboard using Tableau Public, clearly stating data limitations.
+      </p>
+    </section>
 
+    <section id="results">
+      <h2>Results</h2>
+      <p>
+        The final dashboard revealed clear year-wise trends in road accident fatalities across India, highlighted high-risk states through geographic visualization, and identified significant changes in fatalities over time. 
+        Key KPIs enabled comparison across years despite varying data scopes, allowing users to quickly understand severity patterns and regional disparities. 
+        The insights generated can support data-driven discussions around road safety awareness and policy planning.
+      </p>
+    </section>
 
-<section id="results">
-  <h2>Results</h2>
-  <p>
-    The final dashboard revealed clear year-wise trends in road accident fatalities across India, highlighted high-risk states through geographic visualization, and identified significant changes in fatalities over time. 
-    Key KPIs enabled comparison across years despite varying data scopes, allowing users to quickly understand severity patterns and regional disparities. 
-    The insights generated can support data-driven discussions around road safety awareness and policy planning.
-  </p>
-</section>
+    <section id="summary">
+      <h2>Summary</h2>
+      <p>
+        This project demonstrates the complete analytics workflow using real-world government data — from data cleaning and transformation in SQL Server to storytelling through interactive Tableau dashboards. It strengthened practical skills in handling messy datasets, creating usable KPIs, and delivering insights that provide real value, making it a strong stepping stone in my data analytics journey.
+      </p>
+    </section>
 
-
-<section id="summary">
-  <h2>Summary</h2>
-  <p>
-    This project demonstrates the complete analytics workflow using real-world government data — from data cleaning and transformation in SQL Server to storytelling through interactive Tableau dashboards. It strengthened practical skills in handling messy datasets, creating usable KPIs, and delivering insights that provide real value, making it a strong stepping stone in my data analytics journey.
-  </p>
-</section>
-
-
-
-<style>
-  #data-sources a {
-    color: #0ff; /* neon cyan/blue */
-    text-decoration: none; /* removes underline */
-    font-weight: bold;
-  }
-
-  #data-sources a:hover {
-    color: #0f0; /* change to neon green on hover for effect */
-    text-decoration: underline;
-  }
-</style>
-<section id="data-sources">
-  <h2>Data Sources</h2>
-  <p>
-    Government of India – Open Data Portal (data.gov.in)<br>
-    Ministry of Road Transport and Highways<br>
-    Datasets spanning 2014–2022
-    <br><br>
-    <b>Links:</b><br>
-    (1) Traffic accidents, injured & deaths (2022):<br>
-    <a href="https://www.data.gov.in/resource/stateutscity-wise-number-cases-reported-and-persons-injured-died-due-traffic-accidents" target="_blank">
-      Click here
-    </a>
-    <br><br>
-    (2) Road accident deaths (2021):<br>
-    <a href="https://www.data.gov.in/resource/stateutscity-wise-road-accident-deaths-during-2021" target="_blank">
-      Click here
-    </a>
-    <br><br>
-    (3) Road accidents by State/UT (2018–2019):<br>
-    <a href="https://www.data.gov.in/resource/stateut-wise-road-accident-during-2018-and-2019-ministry-road-transport-and-highways" target="_blank">
-      Click here
-    </a>
-    <br><br>
-    (4) Road accidents & persons killed at crossings (2014):<br>
-    <a href="https://www.data.gov.in/resource/total-number-road-accident-persons-killed-all-road-crossing-during-2014from-ministry-road" target="_blank">
-      Click here
-    </a>
-    <br><br>
-    (5) Road accident fatalities (2018–2019):<br>
-    <a href="https://www.data.gov.in/resource/stateut-wise-road-accident-fatalities-during-2018-and-2019-ministry-road-transport-and" target="_blank">
-      Click here
-    </a>
-  </p>
-</section>
-
-
-
+    <section id="data-sources">
+      <h2>Data Sources</h2>
+      <p>
+        Government of India – Open Data Portal (data.gov.in)<br>
+        Ministry of Road Transport and Highways<br>
+        Datasets spanning 2014–2022
+        <br><br>
+        <b>Links:</b><br>
+        (1) Traffic accidents, injured & deaths (2022):<br>
+        <a href="https://www.data.gov.in/resource/stateutscity-wise-number-cases-reported-and-persons-injured-died-due-traffic-accidents" target="_blank">
+          Click here
+        </a>
+        <br><br>
+        (2) Road accident deaths (2021):<br>
+        <a href="https://www.data.gov.in/resource/stateutscity-wise-road-accident-deaths-during-2021" target="_blank">
+          Click here
+        </a>
+        <br><br>
+        (3) Road accidents by State/UT (2018–2019):<br>
+        <a href="https://www.data.gov.in/resource/stateut-wise-road-accident-during-2018-and-2019-ministry-road-transport-and-highways" target="_blank">
+          Click here
+        </a>
+        <br><br>
+        (4) Road accidents & persons killed at crossings (2014):<br>
+        <a href="https://www.data.gov.in/resource/total-number-road-accident-persons-killed-all-road-crossing-during-2014from-ministry-road" target="_blank">
+          Click here
+        </a>
+        <br><br>
+        (5) Road accident fatalities (2018–2019):<br>
+        <a href="https://www.data.gov.in/resource/stateut-wise-road-accident-fatalities-during-2018-and-2019-ministry-road-transport-and" target="_blank">
+          Click here
+        </a>
+      </p>
+    </section>
 
     <!-- === Gallery Section === -->
     <div class="gallery-container">
       <div class="gallery">
-        <img src="../indianroadaccidentanalysisphotos/Dashboard.jpg" alt="Dashboard 1">
-        <img src="../indianroadaccidentanalysisphotos/KPIs.jpg" alt="Dashboard 2">
-        <img src="../indianroadaccidentanalysisphotos/KPIs1.jpg" alt="Dashboard 3">
-        <img src="../indianroadaccidentanalysisphotos/Results2.jpg" alt="Dashboard 4">
-        <img src="../indianroadaccidentanalysisphotos/results`.jpg" alt="Dashboard 5">
-
+        <img src="/portfolio/indianroadaccidentanalysisphotos/Dashboard.jpg" alt="Road Accident Dashboard">
+        <img src="/portfolio/indianroadaccidentanalysisphotos/KPIs.jpg" alt="KPIs Analysis">
+        <img src="/portfolio/indianroadaccidentanalysisphotos/KPIs1.jpg" alt="KPIs Detailed">
+        <img src="/portfolio/indianroadaccidentanalysisphotos/Results2.jpg" alt="Analysis Results">
+        <img src="/portfolio/indianroadaccidentanalysisphotos/results`.jpg" alt="Additional Results">
       </div>
     </div>
 
-    <a href="../project.html?category=tableau" class="back-btn">← Back to Projects</a>
-
+    <a href="/portfolio/project.html?category=tableau" class="back-btn">← Back to Projects</a>
   </div>
 
   <!-- === Image Zoom Modal Script === -->
