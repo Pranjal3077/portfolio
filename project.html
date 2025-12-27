@@ -7,8 +7,8 @@
 
   <!-- Fonts & Styles -->
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="taskbar.css">
+  <link rel="stylesheet" href="/portfolio/style.css">
+  <link rel="stylesheet" href="/portfolio/taskbar.css">
 
   <style>
     body {
@@ -142,7 +142,7 @@
   <!-- Taskbar -->
   <div id="taskbar-container"></div>
   <script>
-    fetch('taskbar.html')
+    fetch('/portfolio/taskbar.html')
       .then(response => response.text())
       .then(data => document.getElementById('taskbar-container').innerHTML = data);
   </script>
@@ -162,39 +162,39 @@
     <!-- Project Cards -->
     <div class="projects-grid">
       <!-- Excel -->
-      <div class="project-card" data-category="excel" onclick="location.href='projects/excel-sales-dashboard.html'">
+      <div class="project-card" data-category="excel" onclick="location.href='/portfolio/projects/excel-sales-dashboard.html'">
         <h3>Excel Sales Dashboard</h3>
         <p>Interactive Excel dashboard with pivot tables & charts for data-driven decisions.</p>
       </div>
 
-      <div class="project-card" data-category="excel" onclick="location.href='projects/financial-analysis-dashboard.html'">
+      <div class="project-card" data-category="excel" onclick="location.href='/portfolio/projects/financial-analysis-dashboard.html'">
         <h3>Financial Dashboard Analysis</h3>
         <p>Cost optimization and financial metrics tracking using Solver and Excel formulas.</p>
       </div>
 
-      <div class="project-card" data-category="excel" onclick="location.href='projects/stock-market-analysis-dashboard.html'">
+      <div class="project-card" data-category="excel" onclick="location.href='/portfolio/projects/stock-market-analysis-dashboard.html'">
         <h3>Stock Market Analysis Dashboard</h3>
         <p>Analyzing market trends and portfolio performance using Excel visualization.</p>
       </div>
 
-      <div class="project-card" data-category="excel" onclick="location.href='projects/hybrid-arima-regresssion-predictive.html'">
+      <div class="project-card" data-category="excel" onclick="location.href='/portfolio/projects/hybrid-arima-regression-predictive.html'">
         <h3>Hybrid ARIMA+Regression Predictive Model</h3>
         <p>Forecasting future values with hybrid time-series modeling using Excel tools.</p>
       </div>
 
       <!-- SQL + Excel -->
-      <div class="project-card" data-category="excel sql" onclick="window.location.href='projects/hr-employee-analytics.html'">
+      <div class="project-card" data-category="excel sql" onclick="window.location.href='/portfolio/projects/hr-employee-analytics.html'">
         <h3>HR Employee Analytics (SQL + Excel)</h3>
         <p>Data-driven HR insights using SQL queries and Excel dashboards for workforce optimization.</p>
       </div>
 
       <!-- SQL + Tableau -->
-      <div class="project-card" data-category="sql tableau powerbi" onclick="window.location.href='projects/supplier-analysis-dashboard.html'">
+      <div class="project-card" data-category="sql tableau powerbi" onclick="window.location.href='/portfolio/projects/supplier-analysis-dashboard.html'">
         <h3>Supplier Dashboard Analysis (SQL + PowerBI)</h3>
         <p>Supplier performance insights using SQL-based ETL and Power BI visualization.</p>
       </div>
 
-      <div class="project-card" data-category="sql tableau powerbi" onclick="window.location.href='projects/indian-road-accident-analysis.html'">
+      <div class="project-card" data-category="sql tableau powerbi" onclick="window.location.href='/portfolio/projects/indian-road-accident-analysis.html'">
         <h3>Indian Road Accident Analysis (SQL + Tableau)</h3>
         <p>Road accident patterns explored using SQL datasets and interactive Tableau visuals.</p>
       </div>
