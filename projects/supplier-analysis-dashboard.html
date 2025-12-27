@@ -11,8 +11,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../style.css" />
-  <link rel="stylesheet" href="../taskbar.css" />
+  <link rel="stylesheet" href="/portfolio/style.css" />
+  <link rel="stylesheet" href="/portfolio/taskbar.css" />
 
   <style>
     body {
@@ -91,7 +91,7 @@
     .gallery {
       display: flex;
       gap: 1.5rem;
-      width: calc(300px * 6);
+      width: calc(300px * 4);
       animation: scrollGallery 30s linear infinite;
     }
 
@@ -166,6 +166,18 @@
       from { opacity: 0; transform: translateY(15px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    #data-sources a {
+      color: #66fcf1;
+      text-decoration: none;
+      border-bottom: 1px dotted #45a29e;
+      transition: all 0.3s ease;
+    }
+
+    #data-sources a:hover {
+      color: #45a29e;
+      border-bottom: 1px solid #66fcf1;
+    }
   </style>
 </head>
 
@@ -174,7 +186,7 @@
   <!-- Load Taskbar -->
   <div id="taskbar-container"></div>
   <script>
-    fetch('../taskbar.html')
+    fetch('/portfolio/taskbar.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('taskbar-container').innerHTML = data;
@@ -188,82 +200,74 @@
       <h3>Data Visualization using PowerBI</h3>
     </div>
 
-<section id="introduction">
-  <h2>Introduction</h2>
-  <p>
-    This Supplier Analysis Dashboard project focuses on evaluating supplier performance and profitability using SQL Server (SSMS) and visualization tools. 
-    The objective is to derive insights related to supplier efficiency, cost management, order fulfillment, and overall contribution to business profitability. 
-    This project helps procurement and supply chain teams make data-driven decisions, optimize supplier relationships, and enhance organizational performance.
-  </p>
-</section>
+    <section id="introduction">
+      <h2>Introduction</h2>
+      <p>
+        This Supplier Analysis Dashboard project focuses on evaluating supplier performance and profitability using SQL Server (SSMS) and visualization tools. 
+        The objective is to derive insights related to supplier efficiency, cost management, order fulfillment, and overall contribution to business profitability. 
+        This project helps procurement and supply chain teams make data-driven decisions, optimize supplier relationships, and enhance organizational performance.
+      </p>
+    </section>
 
+    <section id="objective">
+      <h2>Objective</h2>
+      <p>
+        Extract supplier and purchase-related data from the AdventureWorks SQL database.<br><br>
+        Create meaningful KPIs that represent supplier performance, profitability, and efficiency.<br><br>
+        Perform SQL joins, aggregations, grouping, and advanced calculations to analyze supplier trends.<br><br>
+        Build a polished, interactive Excel/Tableau/Power BI dashboard for reporting.<br><br>
+        Demonstrate real-world BI skills through SQL and data visualization integration.
+      </p>
+    </section>
 
-<section id="objective">
-  <h2>Objective</h2>
-  <p>
-    Extract supplier and purchase-related data from the AdventureWorks SQL database.<br><br>
-    Create meaningful KPIs that represent supplier performance, profitability, and efficiency.<br><br>
-    Perform SQL joins, aggregations, grouping, and advanced calculations to analyze supplier trends.<br><br>
-    Build a polished, interactive Excel/Tableau/Power BI dashboard for reporting.<br><br>
-    Demonstrate real-world BI skills through SQL and data visualization integration.
-  </p>
-</section>
+    <section id="methodology">
+      <h2>Methodology</h2>
+      <p>
+        - Collected and cleaned supplier and purchase data from the AdventureWorks SQL database.<br>
+        - Performed SQL queries with joins, aggregations, and calculations to derive KPIs.<br>
+        - Created pivot tables, charts, and interactive dashboards to summarize supplier performance.<br>
+        - Applied filters, slicers, and conditional formatting to highlight trends and insights.<br>
+        - Integrated SQL results into Excel/Tableau/Power BI for dynamic visualization and reporting.
+      </p>
+    </section>
 
+    <section id="results">
+      <h2>Results</h2>
+      <p>
+        The final dashboard provided clear insights into supplier performance, profitability, and order fulfillment efficiency. 
+        Decision-makers could identify the most profitable suppliers, monitor underperforming ones, and make data-driven procurement decisions in real-time.
+      </p>
+    </section>
 
- <section id="methodology">
-  <h2>Methodology</h2>
-  <p>
-    - Collected and cleaned supplier and purchase data from the AdventureWorks SQL database.<br>
-    - Performed SQL queries with joins, aggregations, and calculations to derive KPIs.<br>
-    - Created pivot tables, charts, and interactive dashboards to summarize supplier performance.<br>
-    - Applied filters, slicers, and conditional formatting to highlight trends and insights.<br>
-    - Integrated SQL results into Excel/Tableau/Power BI for dynamic visualization and reporting.
-  </p>
-</section>
+    <section id="summary">
+      <h2>Summary</h2>
+      <p>
+        This project demonstrates how SQL and Excel/Tableau/Power BI can serve as powerful business intelligence tools. 
+        The dashboard transformed raw supplier and purchase data into actionable insights, enabling interactive analysis and informed decision-making for procurement and supply chain teams.
+      </p>
+    </section>
 
-
-<section id="results">
-  <h2>Results</h2>
-  <p>
-    The final dashboard provided clear insights into supplier performance, profitability, and order fulfillment efficiency. 
-    Decision-makers could identify the most profitable suppliers, monitor underperforming ones, and make data-driven procurement decisions in real-time.
-  </p>
-</section>
-
-
-<section id="summary">
-  <h2>Summary</h2>
-  <p>
-    This project demonstrates how SQL and Excel/Tableau/Power BI can serve as powerful business intelligence tools. 
-    The dashboard transformed raw supplier and purchase data into actionable insights, enabling interactive analysis and informed decision-making for procurement and supply chain teams.
-  </p>
-</section>
-
-<section id="data-sources">
-  <h2>Data Sources</h2>
-  <p>
-    Data for this Supplier Analysis Dashboard was sourced from the 
-    <a href="https://lnkd.in/eegW7Jqa" target="_blank" style="color:#00FFFF; text-decoration:none;">
-      AdventureWorks SQL database
-    </a>, which provides comprehensive supplier, purchase, and product information for real-world analysis.
-  </p>
-</section>
-
-
+    <section id="data-sources">
+      <h2>Data Sources</h2>
+      <p>
+        Data for this Supplier Analysis Dashboard was sourced from the 
+        <a href="https://lnkd.in/eegW7Jqa" target="_blank">
+          AdventureWorks SQL database
+        </a>, which provides comprehensive supplier, purchase, and product information for real-world analysis.
+      </p>
+    </section>
 
     <!-- === Gallery Section === -->
     <div class="gallery-container">
       <div class="gallery">
-        <img src="../supplieranalysisdashboardphotos/Dashboard.jpg" alt="Dashboard 1">
-        <img src="../supplieranalysisdashboardphotos/queries.jpg" alt="Dashboard 2">
-        <img src="../supplieranalysisdashboardphotos/result.jpg" alt="Dashboard 3">
-        <img src="../supplieranalysisdashboardphotos/result1.jpg" alt="Dashboard 4">
-
+        <img src="/portfolio/supplieranalysisdashboardphotos/Dashboard.jpg" alt="Supplier Dashboard">
+        <img src="/portfolio/supplieranalysisdashboardphotos/queries.jpg" alt="SQL Queries">
+        <img src="/portfolio/supplieranalysisdashboardphotos/result.jpg" alt="Analysis Results">
+        <img src="/portfolio/supplieranalysisdashboardphotos/result1.jpg" alt="Detailed Results">
       </div>
     </div>
 
-    <a href="../project.html?category=tableau" class="back-btn">← Back to Projects</a>
-
+    <a href="/portfolio/project.html?category=tableau" class="back-btn">← Back to Projects</a>
   </div>
 
   <!-- === Image Zoom Modal Script === -->
