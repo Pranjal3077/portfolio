@@ -11,8 +11,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../style.css" />
-  <link rel="stylesheet" href="../taskbar.css" />
+  <link rel="stylesheet" href="/portfolio/style.css" />
+  <link rel="stylesheet" href="/portfolio/taskbar.css" />
 
   <style>
     body {
@@ -109,6 +109,16 @@
       box-shadow: 0 0 20px rgba(102, 252, 241, 0.6);
     }
 
+    /* Fix for video element - different styling */
+    .gallery video {
+      width: 280px;
+      height: 180px;
+      border-radius: 10px;
+      object-fit: cover;
+      cursor: pointer;
+      background: #000;
+    }
+
     @keyframes scrollGallery {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
@@ -174,7 +184,7 @@
   <!-- Load Taskbar -->
   <div id="taskbar-container"></div>
   <script>
-    fetch('../taskbar.html')
+    fetch('/portfolio/taskbar.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('taskbar-container').innerHTML = data;
@@ -190,46 +200,49 @@
 
     <section id="introduction">
       <h2>Introduction</h2>
-      <p>This project showcases an interactive Excel dashboard designed to visualize sales performance across regions and time periods. The goal was to turn raw sales data into an easily understandable and actionable visual report.</p>
+      <p>This project showcases an interactive Excel dashboard designed to visualize financial performance across different metrics and time periods. The goal was to turn complex financial data into an easily understandable and actionable visual report.</p>
     </section>
 
     <section id="objective">
       <h2>Objective</h2>
-      <p>To analyze monthly sales trends and regional performance using Excel’s data modeling and visualization features, enabling quick decision-making for management.</p>
+      <p>To analyze financial metrics, cost ratios, and revenue trends using Excel's data modeling and visualization features, enabling informed financial decision-making.</p>
     </section>
 
     <section id="methodology">
       <h2>Methodology</h2>
-      <p>- Collected and cleaned raw sales data using Excel Power Query.<br>
-        - Created pivot tables and charts to summarize key performance indicators.<br>
-        - Designed slicers and interactive filters for dynamic analysis.<br>
-        - Applied conditional formatting for visual emphasis on trends.
+      <p>- Collected and cleaned financial data using Excel Power Query.<br>
+        - Created pivot tables and financial charts to summarize key performance indicators.<br>
+        - Designed slicers and interactive filters for dynamic financial analysis.<br>
+        - Applied conditional formatting for visual emphasis on financial trends.
       </p>
     </section>
 
     <section id="results">
       <h2>Results</h2>
-      <p>The final dashboard provided clear insights into regional performance, top-performing products, and monthly sales trends. Decision-makers could identify growth opportunities and underperforming segments in real-time.</p>
+      <p>The final dashboard provided clear insights into cost ratios by region, profit margins by category, and monthly revenue trends. Decision-makers could identify cost-saving opportunities and revenue growth segments in real-time.</p>
     </section>
 
     <section id="summary">
       <h2>Summary</h2>
-      <p>This project demonstrates how Excel can serve as a powerful business intelligence tool. The dashboard transformed raw sales data into actionable insights through interactive design and analytics.</p>
+      <p>This project demonstrates how Excel can serve as a powerful financial analysis tool. The dashboard transformed raw financial data into actionable insights through interactive design and analytics.</p>
     </section>
 
     <!-- === Gallery Section === -->
     <div class="gallery-container">
       <div class="gallery">
-        <img src="../financialdashboardphotos/CostRatiobyregion.png" alt="Dashboard 1">
-        <img src="../financialdashboardphotos/Dashboard.png" alt="Dashboard 2">
-        <img src="../financialdashboardphotos/dashboardvideo.mp4" alt="Dashboard 3">
-        <img src="../financialdashboardphotos/ProfitMarginByCategory.png" alt="Dashboard 4">
-        <img src="../financialdashboardphotos/Revenueandprofittrend.png" alt="Dashboard 5">
-        <img src="../financialdashboardphotos/RevenueByMonth.png" alt="Dashboard 6">
+        <img src="/portfolio/financialdashboardphotos/CostRatiobyregion.png" alt="Cost Ratio by Region">
+        <img src="/portfolio/financialdashboardphotos/Dashboard.png" alt="Dashboard Overview">
+        <video controls>
+          <source src="/portfolio/financialdashboardphotos/dashboardvideo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <img src="/portfolio/financialdashboardphotos/ProfitMarginByCategory.png" alt="Profit Margin by Category">
+        <img src="/portfolio/financialdashboardphotos/Revenueandprofittrend.png" alt="Revenue and Profit Trend">
+        <img src="/portfolio/financialdashboardphotos/RevenueByMonth.png" alt="Revenue by Month">
       </div>
     </div>
 
-    <a href="../project.html?category=excel" class="back-btn">← Back to Projects</a>
+    <a href="/portfolio/project.html?category=excel" class="back-btn">← Back to Projects</a>
   </div>
 
   <!-- === Image Zoom Modal Script === -->
@@ -243,6 +256,7 @@
     const modalImg = document.getElementById("zoomedImage");
     const closeBtn = document.querySelector(".close");
 
+    // Only make images clickable for zoom, not videos
     document.querySelectorAll(".gallery img").forEach(img => {
       img.addEventListener("click", () => {
         modal.style.display = "block";
