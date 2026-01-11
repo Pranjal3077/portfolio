@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Pranjal Sharma</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- Taskbar -->
+  <div id="taskbar-container"></div>
+  <script>
+    fetch('taskbar.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('taskbar-container').innerHTML = data);
+  </script>
+
+  <!-- Animated Background Elements -->
+  <div class="bg-elements">
+    <div class="bg-circle circle-1"></div>
+    <div class="bg-circle circle-2"></div>
+    <div class="bg-circle circle-3"></div>
+    <div class="bg-grid"></div>
+  </div>
+
+  <main class="main-content">
+    <header class="hero-section">
+      <div class="hero-content">
+        <div class="title-wrapper">
+          <h1 class="main-title">
+            <span class="title-text">Pranjal</span>
+            <span class="title-text highlight">Sharma</span>
+          </h1>
+          <div class="title-line"></div>
+        </div>
+        
+        <h2 class="subtitle">
+          <span class="subtitle-text">Person who likes to</span>
+          <span class="subtitle-highlight">
+            <i class="fas fa-chart-line"></i> Play with Data
+          </span>
+        </h2>
+        
+        <div class="hero-badge">
+          <i class="fas fa-magic"></i> Turning Complexity into Clarity
+        </div>
+      </div>
+    </header>
+
+    <div class="content-wrapper">
+      <div class="container glassmorphic-card">
+        <div class="section-header">
+          <div class="section-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="section-title-content">
+            <p class="location">
+              <strong>Location:</strong> West Bengal, India
+            </p>
+          </div>
+        </div>
+
+        <div class="quote-section">
+          <div class="quote-icon left">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          <p class="blurb">"Something from Nothing"</p>
+          <div class="quote-icon right">
+            <i class="fas fa-quote-right"></i>
+          </div>
+        </div>
+
+        <div class="biography-section">
+          <div class="section-header">
+            <div class="section-icon">
+              <i class="fas fa-user-circle"></i>
+            </div>
+            <h3 class="section-title">Biography</h3>
+          </div>
+          
+          <div class="bio-content">
+            <div class="bio-paragraph">
+              <div class="paragraph-icon">
+                <i class="fas fa-database"></i>
+              </div>
+              <p>
+                I'm a person who loves diving deep into data — understanding trends, making predictions, and extracting insights that actually matter.
+                What excites me is the ability to take something ordinary or unstructured and turn it into something meaningful, useful, and impactful.
+                Whether it's forecasting, analysis, or visualization, I enjoy using data to solve problems and reveal the bigger picture.
+              </p>
+            </div>
+            
+            <div class="bio-paragraph">
+              <div class="paragraph-icon">
+                <i class="fas fa-chart-bar"></i>
+              </div>
+              <p>
+                Be it time series analysis, linear programming models, or operations research — these are the things that keep me hooked,
+                eyes glued to the screen for hours. I believe this is what gives life meaning:
+                finding something that never tires you, something that pulls you deeper into complexity,
+                only for you to emerge with the light of a solution :)
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-section">
+          <div class="section-header">
+            <div class="section-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h3 class="section-title">Get In Touch</h3>
+          </div>
+          
+          <div class="contact-content">
+            <p class="contact-text">
+              <strong> Contact:</strong> 
+              <a href="mailto:pranjalsharma712248@gmail.com" class="contact-link">
+                <span class="email-text">pranjalsharma712248@gmail.com</span>
+                <i class="fas fa-external-link-alt link-icon"></i>
+              </a>
+            </p>
+            <div class="contact-note">
+              <i class="fas fa-clock"></i> I typically respond within 24 hours
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-text">
+          © 2025 Pranjal Sharma | Data Enthusiast
+        </div>
+        <div class="footer-tagline">
+        
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: radial-gradient(ellipse at top, #0a0e17 0%, #0b0c10 70%);
+    color: #e0e0e0;
+    line-height: 1.7;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  /* Animated Background Elements */
+  .bg-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  .bg-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(102, 252, 241, 0.1) 0%, rgba(102, 252, 241, 0) 70%);
+    filter: blur(40px);
+    animation: float 15s infinite ease-in-out;
+  }
+
+  .circle-1 {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+  }
+
+  .circle-2 {
+    width: 400px;
+    height: 400px;
+    bottom: 10%;
+    right: 5%;
+    background: radial-gradient(circle, rgba(69, 162, 158, 0.1) 0%, rgba(69, 162, 158, 0) 70%);
+    animation-delay: 5s;
+  }
+
+  .circle-3 {
+    width: 250px;
+    height: 250px;
+    top: 60%;
+    left: 80%;
+    background: radial-gradient(circle, rgba(197, 198, 199, 0.05) 0%, rgba(197, 198, 199, 0) 70%);
+    animation-delay: 10s;
+  }
+
+  .bg-grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      linear-gradient(rgba(102, 252, 241, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(102, 252, 241, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    33% { transform: translateY(-20px) translateX(20px); }
+    66% { transform: translateY(20px) translateX(-20px); }
+  }
+
+  .main-content {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    text-align: center;
+    padding: 4rem 1rem;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+      rgba(102, 252, 241, 0.1) 0%, 
+      rgba(69, 162, 158, 0.2) 50%, 
+      rgba(11, 12, 16, 0.8) 100%);
+    border-radius: 20px;
+    z-index: -1;
+  }
+
+  .title-wrapper {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+
+  .main-title {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title-text {
+    display: block;
+    line-height: 1.1;
+  }
+
+  .title-text.highlight {
+    background: linear-gradient(90deg, #66fcf1, #45a29e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+  }
+
+  .title-line {
+    width: 150px;
+    height: 4px;
+    background: linear-gradient(90deg, #66fcf1, #45a29e);
+    margin: 1rem auto;
+    border-radius: 2px;
+    animation: pulse 2s infinite;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 1.5rem 0;
+    color: #c5c6c7;
+  }
+
+  .subtitle-text {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle-highlight {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(102, 252, 241, 0.1);
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    color: #66fcf1;
+    font-weight: 600;
+    border: 1px solid rgba(102, 252, 241, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .subtitle-highlight:hover {
+    background: rgba(102, 252, 241, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 252, 241, 0.2);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.6rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #45a29e;
+    border: 1px solid rgba(69, 162, 158, 0.3);
+    backdrop-filter: blur(10px);
+  }
+
+  /* Content Container */
+  .content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .glassmorphic-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+      0 10px 30px rgba(0, 0, 0, 0.3),
+      0 0 50px rgba(102, 252, 241, 0.1);
+    transition: all 0.4s ease;
+  }
+
+  .glassmorphic-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+      0 15px 40px rgba(0, 0, 0, 0.4),
+      0 0 60px rgba(102, 252, 241, 0.15);
+  }
+
+  /* Section Styles */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(102, 252, 241, 0.1);
+    border-radius: 12px;
+    color: #66fcf1;
+    font-size: 1.2rem;
+    border: 1px solid rgba(102, 252, 241, 0.2);
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    color: #66fcf1;
+    font-weight: 600;
+  }
+
+  .location {
+    font-size: 1.1rem;
+    color: #a0d2d0;
+    margin: 0;
+  }
+
+  /* Quote Section */
+  .quote-section {
+    text-align: center;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    position: relative;
+    border-radius: 15px;
+    background: rgba(11, 12, 16, 0.5);
+    border-left: 4px solid #45a29e;
+    border-right: 4px solid #45a29e;
+  }
+
+  .blurb {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: #ffffff;
+    font-style: italic;
+    margin: 0;
+    padding: 0 2rem;
+  }
+
+  .quote-icon {
+    position: absolute;
+    color: rgba(69, 162, 158, 0.5);
+    font-size: 2rem;
+  }
+
+  .quote-icon.left {
+    top: 10px;
+    left: 20px;
+  }
+
+  .quote-icon.right {
+    bottom: 10px;
+    right: 20px;
+  }
+
+  /* Biography Section */
+  .biography-section {
+    margin: 3rem 0;
+  }
+
+  .bio-content {
+    padding-left: 0.5rem;
+  }
+
+  .bio-paragraph {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+  }
+
+  .paragraph-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(102, 252, 241, 0.08);
+    border-radius: 10px;
+    color: #66fcf1;
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-top: 0.3rem;
+  }
+
+  .bio-paragraph p {
+    color: #d0d0d0;
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+
+  /* Contact Section */
+  .contact-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .contact-content {
+    padding-left: 0.5rem;
+  }
+
+  .contact-text {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.5rem 1rem;
+    background: rgba(102, 252, 241, 0.1);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    margin-left: 0.5rem;
+  }
+
+  .contact-link:hover {
+    background: rgba(102, 252, 241, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 252, 241, 0.2);
+  }
+
+  .email-text {
+    font-weight: 500;
+  }
+
+  .link-icon {
+    font-size: 0.8rem;
+  }
+
+  .contact-note {
+    font-size: 0.9rem;
+    color: #8a8a8a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 0.5rem;
+    padding-left: 0.5rem;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 4rem;
+    text-align: center;
+    padding: 2rem;
+    color: #8a8a8a;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .footer-text {
+    font-size: 0.95rem;
+  }
+
+  .footer-tagline {
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #66fcf1;
+  }
+
+  /* Animations */
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .main-content {
+      padding: 1rem;
+    }
+    
+    .main-title {
+      font-size: 2.5rem;
+    }
+    
+    .subtitle {
+      font-size: 1.2rem;
+    }
+    
+    .glassmorphic-card {
+      padding: 2rem;
+    }
+    
+    .blurb {
+      font-size: 1.4rem;
+      padding: 0 1rem;
+    }
+    
+    .bio-paragraph {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    
+    .contact-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      margin-left: 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-section {
+      padding: 2rem 1rem;
+    }
+    
+    .main-title {
+      font-size: 2rem;
+    }
+    
+    .glassmorphic-card {
+      padding: 1.5rem;
+    }
+    
+    .section-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  }
+</style>
+
+</html>

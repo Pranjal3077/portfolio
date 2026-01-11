@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reach Me On - Pranjal Sharma Portfolio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;400;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="taskbar.css">
+
+  <style>
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: radial-gradient(circle at top left, #0b0c10, #1f2833);
+      color: #c5c6c7;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 4rem auto;
+      padding: 3rem;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      box-shadow: 0 0 35px rgba(102, 252, 241, 0.1);
+      text-align: center;
+      animation: fadeIn 1.2s ease;
+    }
+
+    h1 {
+      color: #66fcf1;
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #c5c6c7;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    /* === Social Links === */
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-top: 2.5rem;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      color: #66fcf1;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border: 2px solid rgba(102, 252, 241, 0.3);
+      width: 200px;
+      height: 55px;
+      border-radius: 10px;
+      transition: all 0.35s ease;
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 20px rgba(102, 252, 241, 0.05);
+    }
+
+    .social-links a:hover {
+      background: rgba(102, 252, 241, 0.12);
+      box-shadow: 0 0 25px rgba(102, 252, 241, 0.4);
+      transform: translateY(-3px);
+    }
+
+    .social-links i {
+      width: 22px;
+      height: 22px;
+    }
+
+    /* === Email Box === */
+    .email-box {
+      margin-top: 3rem;
+      padding: 1.5rem 2rem;
+      border: 1px solid rgba(102, 252, 241, 0.3);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.04);
+      display: inline-block;
+      box-shadow: 0 0 25px rgba(102, 252, 241, 0.1);
+      transition: box-shadow 0.3s;
+    }
+
+    .email-box:hover {
+      box-shadow: 0 0 35px rgba(102, 252, 241, 0.25);
+    }
+
+    .email-box a {
+      color: #66fcf1;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    footer {
+      text-align: center;
+      color: #777;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+      opacity: 0.8;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        margin: 2rem 1rem;
+        padding: 2rem;
+      }
+      h1 { font-size: 2rem; }
+      .social-links a {
+        width: 160px;
+        height: 50px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Taskbar -->
+  <div id="taskbar-container"></div>
+
+  <div class="container">
+    <h1>Connect with Me</h1>
+    <p>Find me on social platforms or send me an email — I’d love to connect and collaborate on data, design, or analytics projects!</p>
+
+    <div class="social-links">
+      <a href="https://www.facebook.com/profile.php?id=100056316376399&ref=xav_ig_profile_web" target="_blank">
+        <i data-lucide="facebook"></i> Facebook
+      </a>
+      <a href="https://www.instagram.com/" target="_blank">
+        <i data-lucide="instagram"></i> Instagram
+      </a>
+    <a href="https://www.linkedin.com/in/pranjal-sharma-208047377/" target="_blank" rel="noopener">
+        <i data-lucide="linkedin"></i> LinkedIn
+      </a>
+
+
+      <a href="https://x.com/Pranjal_3077" target="_blank">
+        <i data-lucide="twitter"></i> Twitter
+      </a>
+    </div>
+
+    <div class="email-box">
+      📧 <strong>Email:</strong>
+      <a href="mailto:pranjalsharma712248@gmail.com">pranjalsharma712248@gmail.com</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Pranjal Sharma | Business Analyst</p>
+  </footer>
+
+  <script>
+    fetch('taskbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('taskbar-container').innerHTML = data;
+        lucide.createIcons();
+      });
+  </script>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

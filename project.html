@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Pranjal Sharma</title>
+
+  <!-- Fonts & Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="taskbar.css">
+
+  <style>
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: radial-gradient(circle at top left, #0b0c10, #1f2833);
+      color: #c5c6c7;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
+      animation: fadeIn 1.2s ease;
+    }
+
+    h1 {
+      color: #66fcf1;
+      text-align: center;
+      font-size: 2.4rem;
+      margin-bottom: 2rem;
+      letter-spacing: 1px;
+      text-shadow: 0 0 10px rgba(102, 252, 241, 0.3);
+    }
+
+    /* Filter Buttons */
+    .filter-buttons {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .filter-buttons button {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(102, 252, 241, 0.4);
+      color: #66fcf1;
+      padding: 0.7rem 1.5rem;
+      border-radius: 10px;
+      margin: 0.5rem;
+      cursor: pointer;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(102, 252, 241, 0.1);
+    }
+
+    .filter-buttons button:hover {
+      transform: translateY(-3px);
+      background: rgba(102, 252, 241, 0.15);
+      box-shadow: 0 0 20px rgba(102, 252, 241, 0.3);
+    }
+
+    .filter-buttons button.active {
+      background: rgba(102, 252, 241, 0.2);
+      box-shadow: 0 0 25px rgba(102, 252, 241, 0.5);
+    }
+
+    /* Project Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 14px;
+      padding: 1.8rem;
+      text-align: center;
+      border: 1px solid rgba(102, 252, 241, 0.15);
+      box-shadow: 0 0 25px rgba(102, 252, 241, 0.05);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      cursor: pointer;
+      animation: scaleIn 0.6s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 0 30px rgba(102, 252, 241, 0.35);
+    }
+
+    .project-card h3 {
+      color: #66fcf1;
+      margin-bottom: 0.8rem;
+      font-size: 1.25rem;
+    }
+
+    .project-card p {
+      color: #c5c6c7;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      opacity: 0.9;
+    }
+
+    footer {
+      text-align: center;
+      color: #777;
+      font-size: 0.9rem;
+      margin-top: 4rem;
+      opacity: 0.8;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        padding: 1.5rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      .filter-buttons button {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Taskbar -->
+  <div id="taskbar-container"></div>
+  <script>
+    fetch('taskbar.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('taskbar-container').innerHTML = data);
+  </script>
+
+  <div class="container">
+    <h1>My Projects</h1>
+
+    <!-- Filter Buttons -->
+    <div class="filter-buttons">
+      <button class="active" onclick="filterProjects('all')">All</button>
+      <button onclick="filterProjects('excel')">Excel</button>
+      <button onclick="filterProjects('sql')">SQL</button>
+      <button onclick="filterProjects('python')">Python</button>
+      <button onclick="filterProjects('tableau')">Tableau & PowerBI</button>
+    </div>
+
+    <!-- Project Cards -->
+    <div class="projects-grid">
+      <!-- Excel -->
+      <div class="project-card" data-category="excel" onclick="location.href='projects/excel-sales-dashboard.html'">
+        <h3>Excel Sales Dashboard</h3>
+        <p>Interactive Excel dashboard with pivot tables & charts for data-driven decisions.</p>
+      </div>
+
+      <div class="project-card" data-category="excel" onclick="location.href='projects/financial-analysis-dashboard.html'">
+        <h3>Financial Dashboard Analysis</h3>
+        <p>Cost optimization and financial metrics tracking using Solver and Excel formulas.</p>
+      </div>
+
+      <div class="project-card" data-category="excel" onclick="location.href='projects/stock-market-analysis-dashboard.html'">
+        <h3>Stock Market Analysis Dashboard</h3>
+        <p>Analyzing market trends and portfolio performance using Excel visualization.</p>
+      </div>
+
+      <div class="project-card" data-category="excel" onclick="location.href='projects/hybrid-arima-regresssion-predictive.html'">
+        <h3>Hybrid ARIMA+Regression Predictive Model</h3>
+        <p>Forecasting future values with hybrid time-series modeling using Excel tools.</p>
+      </div>
+
+      <!-- SQL + Excel -->
+      <div class="project-card" data-category="excel sql" onclick="window.location.href='projects/hr-employee-analytics.html'">
+        <h3>HR Employee Analytics (SQL + Excel)</h3>
+        <p>Data-driven HR insights using SQL queries and Excel dashboards for workforce optimization.</p>
+      </div>
+
+      <!-- SQL + Tableau -->
+      <div class="project-card" data-category="sql tableau powerbi" onclick="window.location.href='projects/supplier-analysis-dashboard.html'">
+        <h3>Supplier Dashboard Analysis (SQL + PowerBI)</h3>
+        <p>Supplier performance insights using SQL-based ETL and Power BI visualization.</p>
+      </div>
+
+      <div class="project-card" data-category="sql tableau powerbi" onclick="window.location.href='projects/indian-road-accident-analysis.html'">
+        <h3>Indian Road Accident Analysis (SQL + Tableau)</h3>
+        <p>Road accident patterns explored using SQL datasets and interactive Tableau visuals.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Pranjal Sharma | Business Analyst</p>
+  </footer>
+
+  <script>
+    function filterProjects(category) {
+      const buttons = document.querySelectorAll('.filter-buttons button');
+      const cards = document.querySelectorAll('.project-card');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      const activeButton = Array.from(buttons).find(btn =>
+        btn.textContent.toLowerCase().includes(category)
+      );
+      if (activeButton) activeButton.classList.add('active');
+
+      cards.forEach(card => {
+        const categories = card.dataset.category?.toLowerCase() || '';
+        card.style.display =
+          category === 'all' || categories.includes(category) ? 'block' : 'none';
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const category = params.get('category') || 'all';
+      filterProjects(category);
+    });
+  </script>
+</body>
+</html>
