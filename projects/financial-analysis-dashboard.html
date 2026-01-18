@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Financial Analysis Dashboard | Pranjal Sharma</title>
+
+  <!-- Fonts + Shared Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../taskbar.css" />
+
+  <style>
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: radial-gradient(circle at top left, #0b0c10, #1f2833);
+      color: #c5c6c7;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      padding: 2rem 3rem;
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(102, 252, 241, 0.1);
+      color: #c5c6c7;
+      animation: fadeIn 0.8s ease;
+    }
+
+    .project-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .project-header h1 {
+      color: #66fcf1;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-header h3 {
+      color: #45a29e;
+      font-weight: 400;
+    }
+
+    h2 {
+      color: #66fcf1;
+      margin-top: 2rem;
+      border-left: 4px solid #45a29e;
+      padding-left: 0.6rem;
+    }
+
+    p {
+      margin: 0.5rem 0 1rem;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      color: #66fcf1;
+      text-decoration: none;
+      border: 1px solid #66fcf1;
+      padding: 0.5rem 1.2rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background: #66fcf1;
+      color: #0b0c10;
+      box-shadow: 0 0 15px #45a29e;
+    }
+
+    /* === Gallery Section === */
+    .gallery-container {
+      margin-top: 3rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .gallery {
+      display: flex;
+      gap: 1.5rem;
+      width: calc(300px * 6);
+      animation: scrollGallery 30s linear infinite;
+    }
+
+    .gallery img {
+      width: 280px;
+      height: 180px;
+      border-radius: 10px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(102, 252, 241, 0.6);
+    }
+
+    @keyframes scrollGallery {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Pause animation on hover */
+    .gallery-container:hover .gallery {
+      animation-play-state: paused;
+    }
+
+    /* === Zoom Modal === */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(102, 252, 241, 0.7);
+      animation: zoomIn 0.3s ease;
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #66fcf1;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .close:hover {
+      color: #45a29e;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Load Taskbar -->
+  <div id="taskbar-container"></div>
+  <script>
+    fetch('../taskbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('taskbar-container').innerHTML = data;
+      });
+  </script>
+
+  <!-- Project Container -->
+  <div class="container">
+    <div class="project-header">
+      <h1>Financial Analysis Dashboard</h1>
+      <h3>Financial Data Visualization using Excel</h3>
+    </div>
+
+    <section id="introduction">
+      <h2>Introduction</h2>
+      <p>This project showcases an interactive Excel dashboard designed to visualize sales performance across regions and time periods. The goal was to turn raw sales data into an easily understandable and actionable visual report.</p>
+    </section>
+
+    <section id="objective">
+      <h2>Objective</h2>
+      <p>To analyze monthly sales trends and regional performance using Excel’s data modeling and visualization features, enabling quick decision-making for management.</p>
+    </section>
+
+    <section id="methodology">
+      <h2>Methodology</h2>
+      <p>- Collected and cleaned raw sales data using Excel Power Query.<br>
+        - Created pivot tables and charts to summarize key performance indicators.<br>
+        - Designed slicers and interactive filters for dynamic analysis.<br>
+        - Applied conditional formatting for visual emphasis on trends.
+      </p>
+    </section>
+
+    <section id="results">
+      <h2>Results</h2>
+      <p>The final dashboard provided clear insights into regional performance, top-performing products, and monthly sales trends. Decision-makers could identify growth opportunities and underperforming segments in real-time.</p>
+    </section>
+
+    <section id="summary">
+      <h2>Summary</h2>
+      <p>This project demonstrates how Excel can serve as a powerful business intelligence tool. The dashboard transformed raw sales data into actionable insights through interactive design and analytics.</p>
+    </section>
+
+    <!-- === Gallery Section === -->
+    <div class="gallery-container">
+      <div class="gallery">
+        <img src="../financialdashboardphotos/CostRatiobyregion.png" alt="Dashboard 1">
+        <img src="../financialdashboardphotos/Dashboard.png" alt="Dashboard 2">
+        <img src="../financialdashboardphotos/dashboardvideo.mp4" alt="Dashboard 3">
+        <img src="../financialdashboardphotos/ProfitMarginByCategory.png" alt="Dashboard 4">
+        <img src="../financialdashboardphotos/Revenueandprofittrend.png" alt="Dashboard 5">
+        <img src="../financialdashboardphotos/RevenueByMonth.png" alt="Dashboard 6">
+      </div>
+    </div>
+
+    <a href="../project.html?category=excel" class="back-btn">← Back to Projects</a>
+  </div>
+
+  <!-- === Image Zoom Modal Script === -->
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="zoomedImage">
+  </div>
+
+  <script>
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("zoomedImage");
+    const closeBtn = document.querySelector(".close");
+
+    document.querySelectorAll(".gallery img").forEach(img => {
+      img.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+      });
+    });
+
+    closeBtn.onclick = () => modal.style.display = "none";
+    modal.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
+  </script>
+
+</body>
+</html>

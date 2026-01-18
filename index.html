@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - Pranjal Sharma Portfolio</title>
+
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;400;700&display=swap">
+
+  <!-- Icons (Lucide) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="taskbar.css" />
+
+  <style>
+    /* === Global Theme === */
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: radial-gradient(circle at top left, #0b0c10, #1f2833);
+      color: #c5c6c7;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    #taskbar-container {
+      margin-bottom: 2rem;
+    }
+
+    /* === Container === */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
+      min-height: 70vh;
+    }
+
+    /* === Welcome Section === */
+    .welcome-section {
+      text-align: center;
+      padding: 4rem 1.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(102, 252, 241, 0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: fadeIn 1.2s ease;
+      margin-bottom: 3rem;
+    }
+
+    .welcome-section:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 35px rgba(102, 252, 241, 0.25);
+    }
+
+    .welcome-section h1 {
+      font-size: 3rem;
+      color: #66fcf1;
+      margin-bottom: 0.8rem;
+    }
+
+    .welcome-section p {
+      font-size: 1.2rem;
+      color: #c5c6c7;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* === Grid Section === */
+    .flexcontainer {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+      justify-items: center;
+    }
+
+    .flexcontainer a {
+      text-decoration: none;
+    }
+
+    /* === Project Boxes === */
+    .flex-box {
+      width: 230px;
+      height: 180px;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 20px rgba(102, 252, 241, 0.1);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .flex-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 40px rgba(102, 252, 241, 0.35);
+    }
+
+    .icon {
+      width: 45px;
+      height: 45px;
+      color: #66fcf1;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .flex-box:hover .icon {
+      transform: scale(1.1);
+    }
+
+    .text {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #66fcf1;
+      letter-spacing: 0.5px;
+    }
+
+    /* === Footer === */
+    footer {
+      text-align: center;
+      color: #777;
+      font-size: 0.9rem;
+      margin-top: 4rem;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.03);
+      border-top: 1px solid rgba(102, 252, 241, 0.1);
+    }
+
+    /* === Animations === */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* === Responsive === */
+    @media (max-width: 700px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      .welcome-section {
+        padding: 3rem 1rem;
+      }
+      
+      .welcome-section h1 {
+        font-size: 2.2rem;
+      }
+      
+      .welcome-section p {
+        font-size: 1rem;
+      }
+
+      .flex-box {
+        width: 90%;
+        max-width: 250px;
+        height: 160px;
+      }
+      
+      .flexcontainer {
+        gap: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Taskbar will be loaded here -->
+    <div id="taskbar-container"></div>
+
+    <!-- Welcome Section -->
+    <section class="welcome-section">
+      <h1>Welcome to My Portfolio</h1>
+      <p>Explore my work in data analysis, visualization, and creative insights through data.</p>
+    </section>
+
+    <!-- Project Categories -->
+    <div class="flexcontainer">
+      <a href="project.html?category=excel" class="flex-box">
+        <i data-lucide="file-spreadsheet" class="icon"></i>
+        <p class="text">Excel</p>
+      </a>
+
+      <a href="project.html?category=sql" class="flex-box">
+        <i data-lucide="database" class="icon"></i>
+        <p class="text">SQL</p>
+      </a>
+
+      <a href="project.html?category=python" class="flex-box">
+        <i data-lucide="code" class="icon"></i>
+        <p class="text">Python</p>
+      </a>
+
+      <a href="project.html?category=tableau" class="flex-box">
+        <i data-lucide="bar-chart-3" class="icon"></i>
+        <p class="text">Tableau & PowerBI</p>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Pranjal Sharma | Business Analyst</p>
+  </footer>
+
+  <!-- Taskbar Loader with error handling -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      fetch('taskbar.html')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Failed to load taskbar');
+          }
+          return response.text();
+        })
+        .then(data => {
+          document.getElementById('taskbar-container').innerHTML = data;
+          lucide.createIcons(); // Activate icons in taskbar
+        })
+        .catch(error => {
+          console.error('Error loading taskbar:', error);
+          // Create a fallback navigation
+          document.getElementById('taskbar-container').innerHTML = `
+            <div class="taskbar-fallback">
+              <h1>Pranjal Sharma</h1>
+              <h2>Aspiring Analyst | Data Enthusiast</h2>
+              <nav>
+                <a href="index.html">Home</a> | 
+                <a href="about.html">About</a> | 
+                <a href="project.html?category=all">Projects</a> | 
+                <a href="Certifications.html">Certifications</a>
+              </nav>
+            </div>
+          `;
+        });
+      
+      // Initialize Lucide icons
+      lucide.createIcons();
+    });
+  </script>
+</body>
+
+</html>

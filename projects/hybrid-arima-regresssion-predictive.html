@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hybrid ARIMA+Regression Predictive Model Project</title>
+
+  <!-- Fonts + Shared Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../taskbar.css" />
+
+  <style>
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: radial-gradient(circle at top left, #0b0c10, #1f2833);
+      color: #c5c6c7;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      padding: 2rem 3rem;
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(102, 252, 241, 0.1);
+      color: #c5c6c7;
+      animation: fadeIn 0.8s ease;
+    }
+
+    .project-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .project-header h1 {
+      color: #66fcf1;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-header h3 {
+      color: #45a29e;
+      font-weight: 400;
+    }
+
+    h2 {
+      color: #66fcf1;
+      margin-top: 2rem;
+      border-left: 4px solid #45a29e;
+      padding-left: 0.6rem;
+    }
+
+    p {
+      margin: 0.5rem 0 1rem;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      color: #66fcf1;
+      text-decoration: none;
+      border: 1px solid #66fcf1;
+      padding: 0.5rem 1.2rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background: #66fcf1;
+      color: #0b0c10;
+      box-shadow: 0 0 15px #45a29e;
+    }
+
+    /* === Gallery Section === */
+    .gallery-container {
+      margin-top: 3rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .gallery {
+      display: flex;
+      gap: 1.5rem;
+      width: calc(300px * 6);
+      animation: scrollGallery 30s linear infinite;
+    }
+
+    .gallery img {
+      width: 280px;
+      height: 180px;
+      border-radius: 10px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(102, 252, 241, 0.6);
+    }
+
+    @keyframes scrollGallery {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Pause animation on hover */
+    .gallery-container:hover .gallery {
+      animation-play-state: paused;
+    }
+
+    /* === Zoom Modal === */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(102, 252, 241, 0.7);
+      animation: zoomIn 0.3s ease;
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #66fcf1;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .close:hover {
+      color: #45a29e;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    a{
+      color: #66fcf1
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Load Taskbar -->
+  <div id="taskbar-container"></div>
+  <script>
+    fetch('../taskbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('taskbar-container').innerHTML = data;
+      });
+  </script>
+
+  <!-- Project Container -->
+  <div class="container">
+    <div class="project-header">
+      <h1>Hybrid ARIMA+Regression Predictive Model Project</h1>
+      <h3>Data Visualization and Prediction using Statistical Methods</h3>
+    </div>
+
+<section id="introduction">
+  <h2>Introduction</h2>
+  <p>This project presents a Hybrid Predictive Demand Forecasting System that combines Regression analysis and ARIMA modeling to predict future product demand. The goal is to provide accurate forecasts by leveraging historical sales data, enabling data-driven inventory and sales planning decisions.</p>
+</section>
+
+
+<section id="objective">
+  <h2>Objective</h2>
+  <p>To predict future product demand by combining Regression and ARIMA models, providing actionable insights for inventory management, sales planning, and strategic decision-making.</p>
+</section>
+
+
+<section id="methodology">
+  <h2>Methodology</h2>
+  <p>- Collected and cleaned historical sales data using Excel Power Query.<br>
+     - Performed Regression analysis to identify key factors affecting demand.<br>
+     - Applied ARIMA modeling to forecast future demand trends.<br>
+     - Built an interactive Excel dashboard with pivot tables, charts, and slicers for dynamic visualization.<br>
+     - Used conditional formatting to highlight critical trends and anomalies.
+  </p>
+</section>
+
+
+<section id="results">
+  <h2>Results</h2>
+  <p>The hybrid forecasting model generated accurate demand predictions and highlighted seasonal trends. The interactive dashboard allowed decision-makers to monitor forecasted vs. actual demand, identify high-demand products, and optimize inventory planning effectively.</p>
+</section>
+
+
+<section id="summary">
+  <h2>Summary</h2>
+  <p>This project demonstrates how a hybrid approach combining Regression and ARIMA models can enhance demand forecasting. The Excel dashboard transformed historical sales data into actionable insights, enabling data-driven inventory management and strategic planning.</p>
+</section>
+
+
+<section id="data-sources">
+  <h2>Data Source</h2>
+  <p>In this project, I used raw sales data from Kaggle.</p>
+  <a href="https://www.kaggle.com/datasets/aswathrao/demand-forecasting" target="_blank">Click to Download</a>
+</section>
+
+
+    <!-- === Gallery Section === -->
+    <div class="gallery-container">
+      <div class="gallery">
+        <img src="../hybridarimaphotos/Dashboard.jpg" alt="Dashboard 1">
+        <img src="../hybridarimaphotos/Data.jpg" alt="Dashboard 2">
+        <img src="../hybridarimaphotos/forecast demand.jpg" alt="Dashboard 3">
+        <img src="../hybridarimaphotos/Screenshot 2025-11-28 225646.jpg" alt="Dashboard 4">
+        <img src="../hybridarimaphotos/Screenshot 2025-11-28 230056.jpg" alt="Dashboard 5">
+      </div>
+    </div>
+
+    <a href="../project.html?category=excel" class="back-btn">← Back to Projects</a>
+  </div>
+
+  <!-- === Image Zoom Modal Script === -->
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="zoomedImage">
+  </div>
+
+  <script>
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("zoomedImage");
+    const closeBtn = document.querySelector(".close");
+
+    document.querySelectorAll(".gallery img").forEach(img => {
+      img.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+      });
+    });
+
+    closeBtn.onclick = () => modal.style.display = "none";
+    modal.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
+  </script>
+
+</body>
+</html>
