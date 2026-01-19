@@ -1,101 +1,174 @@
 <div class="taskbar">
+
+  <!-- Identity -->
+  <div class="identity">
     <h1>Pranjal Sharma</h1>
-    <h2 class="tagline">Aspiring Analyst | Data Enthusiast</h2>
+    <h2>Aspiring Analyst • Data Enthusiast</h2>
+  </div>
 
-    <nav>
-<ul class="sitelinks">
-    <li><a href="/portfolio/index.html"><strong>Home</strong></a></li>
-    <li><a href="/portfolio/about.html"><strong>About</strong></a></li>
-    <li><a href="/portfolio/ReachMeOn.html"><strong>Reach Me On</strong></a></li>
-    <li><a href="/portfolio/Certifications.html"><strong>Certifications</strong></a></li>
-</ul>
+  <!-- Navigation -->
+  <nav>
 
-<ul class="myworks">
-    <li><a href="/portfolio/project.html?category=all"><strong>All</strong></a></li>
-    <li><a href="/portfolio/project.html?category=excel"><strong>Excel</strong></a></li>
-    <li><a href="/portfolio/project.html?category=sql"><strong>SQL</strong></a></li>
-    <li><a href="/portfolio/project.html?category=python"><strong>Python</strong></a></li>
-    <li><a href="/portfolio/project.html?category=tableau"><strong>Tableau & PowerBI</strong></a></li>
-</ul>
+    <!-- Primary Links -->
+    <ul class="sitelinks">
+      <li><a href="/portfolio/index.html">Home</a></li>
+      <li><a href="/portfolio/about.html">About</a></li>
+      <li><a href="/portfolio/reachmeon.html">Reach Me</a></li>
+      <li><a href="/portfolio/certifications.html">Certifications</a></li>
+    </ul>
 
-    <footer>
-        <div id="rights">
-            <p id="footerContent"><em>© 2026 Pranjal Sharma</em></p>
-        </div>
-    </footer>
+    <div class="divider"></div>
 
-    <style>
-        .taskbar {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(102, 252, 241, 0.2);
-            box-shadow: 0 0 15px rgba(102, 252, 241, 0.1);
-            padding: 1rem 0 1.5rem;
-            position: sticky;
-            top: 0;
-            z-index: 999;
-            text-align: center;
-        }
+    <!-- Work Categories -->
+    <ul class="myworks">
+      <li><a href="/portfolio/project.html?category=all">All</a></li>
+      <li><a href="/portfolio/project.html?category=excel">Excel</a></li>
+      <li><a href="/portfolio/project.html?category=sql">SQL</a></li>
+      <li><a href="/portfolio/project.html?category=python">Python</a></li>
+      <li><a href="/portfolio/project.html?category=tableau">Tableau & Power BI</a></li>
+    </ul>
 
-        .taskbar h1 {
-            font-size: 2rem;
-            color: #66fcf1;
-            margin-bottom: 0.3rem;
-        }
+  </nav>
 
-        .taskbar h2 {
-            font-weight: 400;
-            color: #c5c6c7;
-            margin-bottom: 1rem;
-        }
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Pranjal Sharma</p>
+  </footer>
 
-        .sitelinks,
-        .myworks {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1.2rem;
-            margin: 0.8rem auto;
-            padding: 0;
-            max-width: 800px;
-        }
+  <style>
+    /* =========================
+       Taskbar Container
+    ========================== */
+    .taskbar {
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      text-align: center;
+      padding: 1.4rem 1rem 1.2rem;
+      background: linear-gradient(
+        135deg,
+        rgba(102, 252, 241, 0.12),
+        rgba(255, 255, 255, 0.04)
+      );
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(102, 252, 241, 0.2);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    }
 
-        .sitelinks a,
-        .myworks a {
-            text-decoration: none;
-            color: #c5c6c7;
-            padding: 0.5rem 0.8rem;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: transform 0.2s ease, color 0.3s, text-shadow 0.3s;
-        }
+    /* =========================
+       Identity
+    ========================== */
+    .identity h1 {
+      font-size: 2.1rem;
+      color: #66fcf1;
+      margin: 0;
+      letter-spacing: 0.6px;
+    }
 
-        .sitelinks a:hover,
-        .myworks a:hover {
-            color: #66fcf1;
-            text-shadow: 0 0 10px #45a29e;
-            transform: scale(1.15);
-        }
+    .identity h2 {
+      font-weight: 400;
+      font-size: 1rem;
+      color: #c5c6c7;
+      margin-top: 0.4rem;
+      opacity: 0.85;
+    }
 
-        .hr {
-            border: none;
-            height: 1px;
-            width: 60%;
-            background: rgba(102, 252, 241, 0.2);
-            margin: 1rem auto;
-        }
+    /* =========================
+       Navigation Lists
+    ========================== */
+    .sitelinks,
+    .myworks {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.4rem;
+      margin: 1.2rem auto;
+      padding: 0;
+      max-width: 900px;
+    }
 
-        footer {
-            text-align: center;
-            color: #777;
-            font-size: 0.9rem;
-            margin-top: 1rem;
-        }
-    </style>
+    .sitelinks a,
+    .myworks a {
+      text-decoration: none;
+      color: #c5c6c7;
+      font-weight: 600;
+      padding: 0.55rem 0.9rem;
+      border-radius: 10px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    /* Hover underline glow */
+    .sitelinks a::after,
+    .myworks a::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: #66fcf1;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+      box-shadow: 0 0 10px #66fcf1;
+    }
+
+    .sitelinks a:hover::after,
+    .myworks a:hover::after {
+      width: 70%;
+    }
+
+    .sitelinks a:hover,
+    .myworks a:hover {
+      color: #66fcf1;
+      background: rgba(102, 252, 241, 0.08);
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       Divider
+    ========================== */
+    .divider {
+      width: 65%;
+      height: 1px;
+      margin: 1.1rem auto;
+      background: linear-gradient(
+        to right,
+        transparent,
+        rgba(102, 252, 241, 0.4),
+        transparent
+      );
+    }
+
+    /* =========================
+       Footer
+    ========================== */
+    footer {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: #888;
+      opacity: 0.75;
+    }
+
+    /* =========================
+       Responsive
+    ========================== */
+    @media (max-width: 600px) {
+      .identity h1 {
+        font-size: 1.8rem;
+      }
+
+      .identity h2 {
+        font-size: 0.9rem;
+      }
+
+      .sitelinks,
+      .myworks {
+        gap: 1rem;
+      }
+    }
+  </style>
+
 </div>
-
-
-
-
