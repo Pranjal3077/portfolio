@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UPI Transaction Analysis Project</title>
+
+  <!-- Fonts + Shared Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../taskbar.css" />
+
+  <style>
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: radial-gradient(circle at top left, #0b0c10, #1f2833);
+      color: #c5c6c7;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      padding: 2rem 3rem;
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(102, 252, 241, 0.1);
+      color: #c5c6c7;
+      animation: fadeIn 0.8s ease;
+    }
+
+    .project-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .project-header h1 {
+      color: #66fcf1;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-header h3 {
+      color: #45a29e;
+      font-weight: 400;
+    }
+
+    h2 {
+      color: #66fcf1;
+      margin-top: 2rem;
+      border-left: 4px solid #45a29e;
+      padding-left: 0.6rem;
+    }
+
+    p {
+      margin: 0.5rem 0 1rem;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      color: #66fcf1;
+      text-decoration: none;
+      border: 1px solid #66fcf1;
+      padding: 0.5rem 1.2rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background: #66fcf1;
+      color: #0b0c10;
+      box-shadow: 0 0 15px #45a29e;
+    }
+
+    /* === Gallery Section === */
+    .gallery-container {
+      margin-top: 3rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .gallery {
+      display: flex;
+      gap: 1.5rem;
+      width: calc(300px * 6);
+      animation: scrollGallery 30s linear infinite;
+    }
+
+    .gallery img {
+      width: 280px;
+      height: 180px;
+      border-radius: 10px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(102, 252, 241, 0.6);
+    }
+
+    @keyframes scrollGallery {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Pause animation on hover */
+    .gallery-container:hover .gallery {
+      animation-play-state: paused;
+    }
+
+    /* === Zoom Modal === */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(102, 252, 241, 0.7);
+      animation: zoomIn 0.3s ease;
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #66fcf1;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .close:hover {
+      color: #45a29e;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Load Taskbar -->
+  <div id="taskbar-container"></div>
+  <script>
+    fetch('../taskbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('taskbar-container').innerHTML = data;
+      });
+  </script>
+
+  <!-- Project Container -->
+  <div class="container">
+    <div class="project-header">
+      <h1>UPI Transaction Analysis</h1>
+      <h3>Data Visualization using Excel</h3>
+    </div>
+
+<section id="introduction">
+  <h2>Introduction</h2>
+  <p>
+    This UPI Transaction & Risk Analysis project focuses on analyzing the growth, adoption, and risk dynamics of 
+    Unified Payments Interface (UPI) transactions in India using publicly available government data.
+    The objective is to study transaction volume and value trends, compare UPI growth with overall digital payments,
+    evaluate cross-border UPI usage, and assess fraud patterns relative to system scale.
+  </p>
+  <p>
+    By combining data analysis using Python (Pandas, NumPy, Matplotlib) with dashboard-style visualizations,
+    this project provides insights into how rapid UPI adoption transitions into platform maturity while maintaining
+    manageable risk levels. The analysis supports understanding of digital payment evolution, financial inclusion,
+    and risk management within India’s fintech ecosystem.
+  </p>
+</section>
+
+
+<section id="objective">
+  <h2>Objective</h2>
+  <p>
+    Analyze the growth, scale, and adoption of Unified Payments Interface (UPI) transactions in India.<br><br>
+    Measure year-on-year trends in digital payment volume and value, including UPI and overall digital payments.<br><br>
+    Evaluate cross-border UPI transaction behavior and average transaction value patterns.<br><br>
+    Assess UPI fraud trends and calculate risk-related KPIs such as fraud growth and fraud-to-sales ratios.<br><br>
+    Build a comprehensive, insight-driven dashboard to demonstrate real-world data analytics and fintech risk analysis skills.
+  </p>
+</section>
+
+<section id="methodology">
+  <h2>Methodology</h2>
+  <p>
+    - Collected raw UPI, digital payments, cross-border transactions, and fraud data from official government sources.<br>
+    - Cleaned and standardized datasets using Python (Pandas, NumPy) to ensure consistency across financial years.<br>
+    - Performed exploratory data analysis, trend analysis, and KPI calculations including growth rates, averages, and ratios.<br>
+    - Visualized key metrics using Matplotlib to identify adoption trends, risk patterns, and behavioral shifts.<br>
+    - Designed a dashboard-style layout to present insights clearly for stakeholders and decision-makers.
+  </p>
+</section>
+
+<section id="results">
+  <h2>Results</h2>
+  <p>
+    The analysis revealed rapid early growth in UPI adoption followed by gradual stabilization, indicating platform maturity rather than slowdown. 
+    While transaction volumes and values continued to rise sharply, growth rates moderated over time due to base effects.
+    UPI fraud cases increased in absolute terms but remained low relative to transaction scale, highlighting improved system resilience.
+    Cross-border UPI usage showed expanding adoption with a shift toward smaller, more frequent transactions.
+  </p>
+</section>
+
+<section id="summary">
+  <h2>Summary</h2>
+  <p>
+    This project demonstrates how data analytics and visualization can be used to evaluate large-scale digital payment systems.
+    By transforming raw public data into meaningful KPIs and insights, the dashboard highlights the evolution of UPI as a mature, scalable, and relatively low-risk payment ecosystem.
+    The project showcases applied skills in Python-based data analysis, financial trend evaluation, and risk assessment within the fintech domain.
+  </p>
+</section>
+
+<section id="data-sources">
+  <h2>Data Sources</h2>
+  <p>
+    Government of India – Open Data Portal (data.gov.in)<br>
+    Datasets spanning 2018–2025
+    <br><br>
+    <b>Links:</b><br>
+    Year-wise Total Value of Digital Payments Paid through Unified Payments Interface (UPI) in the Country (2018–2022)
+<br>
+    <a href="https://www.data.gov.in/resource/year-wise-total-value-digital-payments-paid-through-unified-payments-interface-upi-country" target="_blank">
+      Click here
+    </a>
+    <br><br>
+    (2) Year-wise Details of Unified Payments Interface (UPI) Fraud Cases (2020–2023)<br>
+    <a href="https://www.data.gov.in/resource/year-wise-details-such-unified-payments-interface-upi-frauds-2020-21-2022-23" target="_blank">
+      Click here
+    </a>
+    <br><br>
+    (3) Year-wise Details of Digital Payments Transactions including Transactions through Unified Payments Interface (UPI)
+   (2020–2025)<br>
+    <a href=" https://www.data.gov.in/resource/year-wise-details-digital-payments-transactions-including-transactions-through-unified" target="_blank">
+      Click here
+    </a>
+    <br><br>
+    (4)Year-wise Details of Cross-border UPI Transactions (2021–2025)<br>
+    <a href="https://www.data.gov.in/resource/year-wise-details-cross-border-upi-transactions-2021-22-2024-25" target="_blank">
+      Click here
+    </a>
+    <br><br>
+  </p>
+</section>
+
+
+
+    <!-- === Gallery Section === -->
+    <div class="gallery-container">
+      <div class="gallery">
+        <img src="../upitransactionanalysisphotos/Average Value per Cross-Border UPI Transaction.png" alt="Dashboard 1">
+        <img src="../upitransactionanalysisphotos/Dashboard.png" alt="Dashboard 2">
+        <img src="../upitransactionanalysisphotos/Growth Acceleration of Cross-Border UPI Transaction Value.png" alt="Dashboard 3">
+        <img src="../upitransactionanalysisphotos/ss1.png" alt="Dashboard 4">
+        <img src="../upitransactionanalysisphotos/ss2.png" alt="Dashboard 5">
+        <img src="../upitransactionanalysisphotos/ss3.png" alt="Dashboard 6">
+        <img src="../upitransactionanalysisphotos/UPI Fraud to Sales Ratio (2020–2023).png" alt="Dashboard 7">
+        <img src="../upitransactionanalysisphotos/UPI Share in Total Digital Payment Value (India.png" alt="Dashboard 8">
+        <img src="../upitransactionanalysisphotos/UPI Usage vs UPI Fraud Cases (India).png" alt="Dashboard 9">
+        <img src="../upitransactionanalysisphotos/UPI vs Total Digital Payments Growth Trend.png" alt="Dashboard 10">
+        <img src="../upitransactionanalysisphotos/Volatility of Cross-Border UPI Value Growth.png" alt="Dashboard 11">
+        <img src="../upitransactionanalysisphotos/Volatility of UPI Fraud Growth Rate.png" alt="Dashboard 12">
+        <img src="../upitransactionanalysisphotos/Year wise growth of Cross-Border UPI Transactions based on Volume.png" alt="Dashboard 14">
+        <img src="../upitransactionanalysisphotos/Year-on-Year Growth of Cross-Border UPI (Value).png" alt="Dashboard 13">
+        <img src="../upitransactionanalysisphotos/Year-on-Year Growth Rate of UPI Fraud Cases (2021-2023).png" alt="Dashboard 15">
+        <img src="../upitransactionanalysisphotos/Year-wise UPI Fraud Cases (2020–2023).png" alt="Dashboard 16">
+        
+
+      </div>
+    </div>
+
+    <a href="../project.html?category=tableau" class="back-btn">← Back to Projects</a>
+
+  </div>
+
+  <!-- === Image Zoom Modal Script === -->
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="zoomedImage">
+  </div>
+
+  <script>
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("zoomedImage");
+    const closeBtn = document.querySelector(".close");
+
+    document.querySelectorAll(".gallery img").forEach(img => {
+      img.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+      });
+    });
+
+    closeBtn.onclick = () => modal.style.display = "none";
+    modal.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
+  </script>
+
+</body>
+</html>
